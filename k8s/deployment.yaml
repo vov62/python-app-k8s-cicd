@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: python-app
-        image: vovhubdoc/python-app:v1
+        image: vovhubdoc/python-app:6b0b7f6b45ea27af650ea87fd5b36b53a0c39289
         ports:
         - containerPort: 5000
