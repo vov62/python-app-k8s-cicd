@@ -48,5 +48,16 @@ jobs:
             - name: Push Docker image
               run: |
                   docker push vovhubdoc/python-app:${{ github.sha }}
+            
+                
+                #   sed command to update the image in the deployment.yaml file
+            - name: Update Kubernetes image
+              run: |
+                  sed -i "s|image: vovhubdoc/python-app:.*|image: vovhubdoc/python-app:${{ github.sha }}|" ../k8s/deployment.yaml
+
+            
+            - name: Show changes
+              run: |
+                  git diff -- ../k8s/deployment.yaml
 
            
