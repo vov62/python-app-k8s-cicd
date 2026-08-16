@@ -12,7 +12,7 @@ def info():
 
 @app.route('/api/v1/health')
 def health():
-    return jsonify({'status': 'up'}), 200
+    return jsonify({'status': 'up', 'version': 'v3'}), 200
 
 
 if __name__ == '__main__':
