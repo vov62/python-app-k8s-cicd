@@ -31,10 +31,12 @@ GitHub Actions
            │
            ▼
       Python App
+```
 
 ---
 
 ## Technologies
+
 - Python / Flask
 - Pytest
 - Docker
@@ -51,6 +53,7 @@ GitHub Actions
 
 ## Repository Structure
 
+```text
 python-app/
 ├── src/
 ├── tests/
@@ -68,8 +71,33 @@ python-app-gitops/
     ├── service.yaml
     └── ingress.yaml
 
+```
+
 ---
 
+---
 
+## CI/CD Flow
 
-```
+- Developer pushes code to main.
+- GitHub Actions runs automated tests.
+- Docker image is built and tagged with the Git commit SHA.
+- Image is pushed to Docker Hub.
+- GitHub Actions updates the Kubernetes image in the GitOps repository.
+- Argo CD detects the Git change.
+- Argo CD synchronizes Kubernetes with the desired state.
+
+## GitOps
+
+The Kubernetes manifests are maintained in a dedicated GitOps repository.
+
+Git is the source of truth for the desired Kubernetes state, while Argo CD continuously reconciles the cluster with the repository.
+
+## Current Kubernetes Setup
+
+- Kubernetes cluster: Minikube
+- Application: Python / Flask
+- Deployment: 2 replicas
+- Service: Kubernetes Service
+- Ingress: NGINX Ingress
+- CD: Argo CD
