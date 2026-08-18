@@ -1,4 +1,4 @@
-# Python Kubernetes CI/CD & GitOps
+# Python Kubernetes & CI/CD & GitOps
 
 End-to-end DevOps project demonstrating a Python application deployment to Kubernetes using GitHub Actions, Docker, GitOps and Argo CD.
 
@@ -49,8 +49,6 @@ GitHub Actions
 
 ---
 
----
-
 ## Repository Structure
 
 ```text
@@ -72,8 +70,6 @@ python-app-gitops/
     └── ingress.yaml
 
 ```
-
----
 
 ---
 
